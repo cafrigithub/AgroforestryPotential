@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Importing openlayers library -->
+    <link rel="stylesheet" href="libs/v6.4.3/v6.4.3/css/ol.css" type="text/css">
+    <!-- <script src="./assets/ol/ol.js"></script> -->
+    <script src="libs/v6.4.3/v6.4.3/build/ol.js"></script>
+    <!-- Custom style file -->
+    <link rel="stylesheet" href="style.css" type="text/css">
+   
+  <!-- Proj4js -->
+ 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.4.4/proj4.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+		integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+
+  <title>Assam Agroforestry Page - 2</title>
+  <style>
+
+  </style>
+</head>
+<body>
+    <center><h1> Assam Agroforestry Potential Area (sqkm) - Map</h1></center>
+    <div id="map" class='map'></div>
+    <script src="main.js"></script>
+    
+    	<div id="state-legend" class="legend"> 
+     	 <center><h4>Agroforestry Potential Area (sqkm) </br> For Assam Districts </h4></center>
+	          <div><span style="background-color: rgb(255, 157, 0, 0.5)"></span>0-400 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(Very low)</div>
+	          <div><span style="background-color: rgb(255, 251, 0, 0.5)"></span>401-800&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (Low)</div>
+	          <div><span style="background-color: rgb(212, 255, 0, 0.5)"></span>801-1200&nbsp;&nbsp;&nbsp; (Moderate)</div>
+	          <div><span style="background-color: rgb(132, 255, 0, 0.5)"></span>1201-1600&nbsp; (High)</div>
+	          <div><span style="background-color: rgb(0, 255, 102, 0.5)"></span>1601-2000&nbsp; (Very high)</div>
+	          <!-- <div><span style="background-color: rgba(255, 0, 0, 0.5)"></span>23</div> -->
+	          <!-- <div><span style="background-color: #fee6ce"></span>24</div> -->
+         </div>
+    <div class="overlay-container">
+        <span class='overlay-text' id='feature-name'></span><br>
+        <span class='overlay-text' id='feature-additional-info'></span><br>
+        </div>
+        <center><h1> Assam Agroforestry Potential Area (sqkm)- Table</h1></center>
+    <div><center><table class="table table-bordered table-hover table-condensed">
+          <thead><tr><th title="Field #1">Sr. No.</th>
+          <th title="Field #2">District</th>
+          <th title="Field #3">Agroforestry Potential Area</th>
+          <th title="Field #4">Agroforestry Potential Area in %</th>
+          </tr></thead>
+          <tbody><tr>
+          <td align="right">1</td>
+          <td>BAKSA</td>
+          <td align="right">1500</td>
+          <td align="right">3.97</td>
+          </tr>
+          <tr>
+          <td align="right">2</td>
+          <td>BARPETA</td>
+          <td align="right">1030</td>
+          <td align="right">2.72</td>
+          </tr>
+          <tr>
+          <td align="right">3</td>
+          <td>BISWANATH</td>
+          <td align="right">1203</td>
+          <td align="right">3.18</td>
+          </tr>
+          <tr>
+          <td align="right">4</td>
+          <td>BONGAIGAON</td>
+          <td align="right">522</td>
+          <td align="right">1.38</td>
+          </tr>
+          <tr>
+          <td align="right">5</td>
+          <td>CACHAR</td>
+          <td align="right">1453</td>
+          <td align="right">3.84</td>
+          </tr>
+          <tr>
+          <td align="right">6</td>
+          <td>CHARAIDEO</td>
+          <td align="right">665</td>
+          <td align="right">1.76</td>
+          </tr>
+          <tr>
+          <td align="right">7</td>
+          <td>CHIRANG</td>
+          <td align="right">918</td>
+          <td align="right">2.43</td>
+          </tr>
+          <tr>
+          <td align="right">8</td>
+          <td>DARRANG</td>
+          <td align="right">843</td>
+          <td align="right">2.23</td>
+          </tr>
+          <tr>
+          <td align="right">9</td>
+          <td>DHEMAJI</td>
+          <td align="right">1435</td>
+          <td align="right">3.79</td>
+          </tr>
+          <tr>
+          <td align="right">10</td>
+          <td>DHUBRI</td>
+          <td align="right">931</td>
+          <td align="right">2.46</td>
+          </tr>
+          <tr>
+          <td align="right">11</td>
+          <td>DIBRUGARH</td>
+          <td align="right">1611</td>
+          <td align="right">4.26</td>
+          </tr>
+          <tr>
+          <td align="right">12</td>
+          <td>DIMA HASAO</td>
+          <td align="right">849</td>
+          <td align="right">2.24</td>
+          </tr>
+          <tr>
+          <td align="right">13</td>
+          <td>GOALPARA</td>
+          <td align="right">1181</td>
+          <td align="right">3.12</td>
+          </tr>
+          <tr>
+          <td align="right">14</td>
+          <td>GOLAGHAT</td>
+          <td align="right">1871</td>
+          <td align="right">4.95</td>
+          </tr>
+          <tr>
+          <td align="right">15</td>
+          <td>HAILAKANDI</td>
+          <td align="right">661</td>
+          <td align="right">1.75</td>
+          </tr>
+          <tr>
+          <td align="right">16</td>
+          <td>HOJAI</td>
+          <td align="right">830</td>
+          <td align="right">2.2</td>
+          </tr>
+          <tr>
+          <td align="right">17</td>
+          <td>JORHAT</td>
+          <td align="right">1211</td>
+          <td align="right">3.2</td>
+          </tr>
+          <tr>
+          <td align="right">18</td>
+          <td>KAMRUP METRO</td>
+          <td align="right">504</td>
+          <td align="right">1.33</td>
+          </tr>
+          <tr>
+          <td align="right">19</td>
+          <td>KAMRUP RURAL</td>
+          <td align="right">1727</td>
+          <td align="right">4.57</td>
+          </tr>
+          <tr>
+          <td align="right">20</td>
+          <td>KARBI ANGLONG</td>
+          <td align="right">1864</td>
+          <td align="right">4.93</td>
+          </tr>
+          <tr>
+          <td align="right">21</td>
+          <td>KARIMGANJ</td>
+          <td align="right">984</td>
+          <td align="right">2.6</td>
+          </tr>
+          <tr>
+          <td align="right">22</td>
+          <td>KOKRAJHAR</td>
+          <td align="right">1661</td>
+          <td align="right">4.39</td>
+          </tr>
+          <tr>
+          <td align="right">23</td>
+          <td>LAKHIMPUR</td>
+          <td align="right">1829</td>
+          <td align="right">4.84</td>
+          </tr>
+          <tr>
+          <td align="right">24</td>
+          <td>MAJULI</td>
+          <td align="right">417</td>
+          <td align="right">1.1</td>
+          </tr>
+          <tr>
+          <td align="right">25</td>
+          <td>MARIGAON</td>
+          <td align="right">978</td>
+          <td align="right">2.59</td>
+          </tr>
+          <tr>
+          <td align="right">26</td>
+          <td>NAGAON</td>
+          <td align="right">1626</td>
+          <td align="right">4.3</td>
+          </tr>
+          <tr>
+          <td align="right">27</td>
+          <td>NALBARI</td>
+          <td align="right">629</td>
+          <td align="right">1.66</td>
+          </tr>
+          <tr>
+          <td align="right">28</td>
+          <td>SIBSAGAR</td>
+          <td align="right">1077</td>
+          <td align="right">2.85</td>
+          </tr>
+          <tr>
+          <td align="right">29</td>
+          <td>SONITPUR</td>
+          <td align="right">1529</td>
+          <td align="right">4.04</td>
+          </tr>
+          <tr>
+          <td align="right">30</td>
+          <td>SOUTH SALMARA</td>
+          <td align="right">197</td>
+          <td align="right">0.52</td>
+          </tr>
+          <tr>
+          <td align="right">31</td>
+          <td>TINSUKIA</td>
+          <td align="right">1488</td>
+          <td align="right">3.93</td>
+          </tr>
+          <tr>
+          <td align="right">32</td>
+          <td>UDALGURI</td>
+          <td align="right">1354</td>
+          <td align="right">3.58</td>
+          </tr>
+          <tr>
+          <td align="right">33</td>
+          <td>WEST KARBI ANGLONG</td>
+          <td align="right">1244</td>
+          <td align="right">3.29</td>
+          </tr>
+          </tbody></table></center>
+        </div>
+</body>
+</html>
